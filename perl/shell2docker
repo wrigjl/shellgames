@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ $SUDO_USER ]; then
+  username=$SUDO_USER
+else
+  username=$(whoami)
+fi
+uid="$(id -u $username)"
+gid="$(id -g $username)"
+docker run --cap-drop=all --net=none -u shellgames:shellgames --rm -it shell

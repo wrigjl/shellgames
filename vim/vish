@@ -1,0 +1,7 @@
+#!/bin/sh
+SHELL=/usr/bin/vim
+export SHELL
+ulimit -S -t 10
+ulimit -H -t 15
+ulimit -S -u 2
+exec /usr/bin/vim
